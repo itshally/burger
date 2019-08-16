@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+}
+.form-container{
+    width: 50%;
+}
+.form-container label{
+    font-weight: bold;
+}
+li{
+    list-style: none;
+    background-color: pink;
+    padding: 10px;
+    margin: 2%;
+    width: 25%;
+    text-align: center;
+}

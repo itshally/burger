@@ -1,8 +1,36 @@
 <h1>Burgers</h1>
 
-<ul>
-  {{#each burgers}}
-    <li>{{id}} {{burger_name}}</li>
-  {{/each}}
+<div class="row">
+  
+  <!-- by default, list of burgers -->
+  <div class="col-6">
+    <ul>
+      {{#each burgers}}
+        <li>
+          {{id}} {{burger_name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 
-</ul>
+  <div class="col-6">
+    <!-- if clicked... -->
+    <ul>
+
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- form -->
+
+<div class="container form-container">
+  <form>
+    <div class="form-group">
+      <label>Add a Burger</label>
+      <input type="text" class="form-control" id="burger" name="burger" placeholder="Enter your burger name">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>

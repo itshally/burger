@@ -12,9 +12,9 @@ var burger = {
             showBurgers(result);
         });
     },
-    insertOne: (burgerName) => {
-        orm.insertNewBurger('burgers', burgerName, function(result){
-            console.log(result);
+    insertOne: (fieldName, newBurger, showBurgers) => {
+        orm.insertOne("burgers", fieldName, newBurger, function(result){
+            showBurgers(result);
         });
     } 
 }

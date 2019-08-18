@@ -62,7 +62,20 @@ var orm = {
         });
         // console.log(query.sql);
     },
-    updateOne: {}
+    updateOne: (tableName, fieldName, condition, showBurgers) => {
+
+      var query = "UPDATE " + tableName;
+          query += " SET ";
+          query += objToSql(fieldName);
+          query += " WHERE ";
+          query += condition;
+
+          console.log(query);
+
+      connection.query(query, function(error, result){
+        showBurgers(result);
+      });
+    }
 };
 
 //exporting the ORM objects

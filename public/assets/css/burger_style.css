@@ -1,11 +1,11 @@
 h1{
     text-align: center;
-    padding: 5%;
+    padding: 2.5%;
     font-family: 'Syncopate', sans-serif;
 }
 .form-container{
     width: 50%;
-    padding: 2.5%;
+    padding: 1.5%;
 }
 #add-btn{
     display: block;
@@ -35,6 +35,12 @@ h1{
 .list-container{
     margin: 5px;
     padding: 2%;
+    height: 50%;
+}
+.list-group{
+    height: 50vh;
+    overflow: auto;
+    /* overflow-y: auto; */
 }
 .change-state{
     display: block;
@@ -42,4 +48,17 @@ h1{
 }
 .list-group-item{
     margin: 5px 0;
+    width: 100%;
+}
+.delete-burger{
+    float: right;
+}
+.footer-container{
+    border-top: 1px solid #000000;
+    text-align: center;
+    padding: 1.5%;
+}
+.footer-container a{
+    text-decoration: none;
+    padding: 5px;
 }

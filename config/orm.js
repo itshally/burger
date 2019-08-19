@@ -36,24 +36,29 @@ function objToSql(ob) {
   
 //creating methods that will be executed for the controllers
 var orm = {
-    //a function to select all the columns to the burger's table
-    selectAll: (tableName, showBurgers) => {
-      connection.query("SELECT * FROM " + tableName + ";", (error, result) => {
-        showBurgers(result);
-      });
-    },
-    //a function to insert a new row of data to the burger's table
-    insertOne: (tableName, fieldName, newBurger, showBurgers) => {
-      connection.query("INSERT INTO " + tableName + " (" + fieldName.toString() + ") VALUES (" +
-        printQuestionMarks(newBurger.length) + ");", newBurger, (err, result) => {
-        showBurgers(result);
-      });
-    },
-    updateOne: (tableName, columnValue, condition, showBurgers) => {
-      connection.query("UPDATE " + tableName + " SET " + objToSql(columnValue) + " WHERE " + condition, (error, result) => {
-        showBurgers(result);
-      })
-    }
+  //a function to select all the columns to the burger's table
+  selectAll: (tableName, showBurgers) => {
+    connection.query("SELECT * FROM " + tableName + ";", (error, result) => {
+      showBurgers(result);
+    });
+  },
+  //a function to insert a new row of data to the burger's table
+  insertOne: (tableName, fieldName, newBurger, showBurgers) => {
+    connection.query("INSERT INTO " + tableName + " (" + fieldName.toString() + ") VALUES (" +
+      printQuestionMarks(newBurger.length) + ");", newBurger, (error, result) => {
+      showBurgers(result);
+    });
+  },
+  updateOne: (tableName, columnValue, condition, showBurgers) => {
+    connection.query("UPDATE " + tableName + " SET " + objToSql(columnValue) + " WHERE " + condition, (error, result) => {
+      showBurgers(result);
+    })
+  },
+  deleteOne: (tableName, condition, showBurgers) => {
+    connection.query("DELETE FROM " + tableName + " WHERE " + condition, (error, result) => {
+      showBurgers(result);
+    });
+  }
 };
 
 //exporting the ORM objects

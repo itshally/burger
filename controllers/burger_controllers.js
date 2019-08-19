@@ -34,5 +34,12 @@ router.put("/api/burgers/:id", (request, response) => {
   });
 });
 
+router.delete("/api/burgers/:id", (request, response) => {
+  var condition = "id=" + request.params.id;
+  burger.deleteOne(condition, (result) => {
+    (result.affectedRows == 0) ? response.status(404).end() : response.status(200).end();
+  });
+});
+
 //exporting the routers
 module.exports = router;    

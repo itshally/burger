@@ -20,7 +20,7 @@ $(() => {
   });//end of change-state function
 
   //function to create a new burger
-  $('#create-burger-form').on('submit', (event) => {
+  $('#add-btn').on('submit', (event) => {
     event.preventDefault();
 
     var newBurger = {
@@ -33,6 +33,16 @@ $(() => {
         data: newBurger
     }).then(() => { location.reload() });
   });//end of submit function
+
+  //function to delete the burger
+  $(".delete-burger").on("click", function(event) {
+    var id = $(this).data("id");
+
+    // Send the DELETE request.
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE"
+    }).then(() => { location.reload() });
+  });
 
 });
   

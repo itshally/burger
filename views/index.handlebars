@@ -1,54 +1,53 @@
 <div class="container">
-
+  <!-- header -->
   <h1>Burgers</h1>
-
-
-<!-- form -->
-<div class="container form-container">
-  <form class="create-burger-form" method="POST" action="/api/burgers">
-    <div class="form-group">
-      <input type="text" class="form-control text-input" name="burger" placeholder="Type your burger name here">
-    </div>
-    
-    <button type="submit" id="add-btn" class="btn btn-light"><span>Add Burger </span><i class="fas fa-plus"></i></button>
-  </form>
-</div>
-
-
-<div class="container">
-  
-<div class="row">
-    <div class="col list-container">
-      <!-- new added burgers-->
-      <h2 class="col-title"><i class="fas fa-hamburger"></i> Choices of Burger:</h2>
-      <ul class="list-group">
-        {{#each burgers}}
-          {{#unless devoured}}
-            {{> burgers/burgers-block devoured=true}} 
-          {{/unless}}
-        {{/each}}
-      </ul>
-    </div>
-
-    <!-- burgers that are already eaten -->
-    <div class="col list-container">
-      <!-- burgers haven't eaten -->
-      <ul class="list-group">
-        <h2 class="col-title"><i class="fas fa-hamburger"></i> Eaten Burgers:</h2>
-        {{#each burgers}}
-          {{#if devoured}}
-            <li class="list-group-item">
-                <!-- shows the burger name -->
-                <label>{{burger_name}}</label>
-            </li>
-          {{/if}}
-        {{/each}}
-      </ul>
-    </div>
-
-    
+  <!-- burger form container -->
+  <div class="container form-container">
+    <!-- form -->
+    <form class="create-burger-form" method="POST" action="/api/burgers">
+      <!-- text field -->
+      <div class="form-group">
+        <input type="text" class="form-control text-input" name="burger" placeholder="Type your burger name here">
+      </div>
+      <!-- add burger button -->
+      <button type="submit" id="add-btn" class="btn btn-light"><span>Add Burger </span><i class="fas fa-plus"></i></button>
+    </form>
   </div>
-</div>
 
+  <!-- container for the burger lists -->
+  <div class="container"> 
+    <div class="row">
+      <!-- column for the new added burgers-->
+      <div class="col list-container">
+        <h2 class="col-title"><i class="fas fa-hamburger"></i> Choices of Burger:</h2>
+        <!-- unordered list block -->
+        <ul class="list-group">
+          {{#each burgers}}
+            {{#unless devoured}}
+              {{> burgers/burgers-block devoured=true}} 
+            {{/unless}}
+          {{/each}}
+        </ul>
+      </div><!-- end of column for new added burgers -->
 
+      <!-- column for the burgers that are already eaten -->
+      <div class="col list-container">
+        <h2 class="col-title"><i class="fas fa-hamburger"></i> Eaten Burgers:</h2>
+        <!-- unordered list -->
+        <ul class="list-group">
+          {{#each burgers}}
+            {{#if devoured}}
+              <li class="list-group-item">
+                  <!-- shows the burger name -->
+                  <label>{{burger_name}}</label>
+                  <!-- delete button for this burger -->
+                  <button class="delete-burger btn btn-light" data-id="{{this.id}}"><i class="fas fa-trash"></i></button>
+              </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </div><!-- end of column for the eaten burgers -->
+
+    </div><!-- end of row div -->
+  </div><!-- end of burger lists' container -->
 </div>

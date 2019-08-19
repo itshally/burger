@@ -16,7 +16,12 @@ var burger = {
         orm.updateOne("burgers", columnValue, condition, (result) => {
             showBurgers(result);
         });
-    }
+    },
+    deleteOne: (condition, showBurgers) => {
+        orm.deleteOne("burgers", condition, (result) => {
+            showBurgers(result);
+        });
+    }   
 }
 
 // exporting the data

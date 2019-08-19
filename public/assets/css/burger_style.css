@@ -1,17 +1,50 @@
 h1{
     text-align: center;
+    padding: 2%;
+    font-family: 'Syncopate', sans-serif;
 }
 .form-container{
     width: 50%;
+    padding: 2.5%;
+}
+#add-btn{
+    display: block;
+    margin-left: auto;
+}
+#add-btn span{
+    margin-right: 5px;
+}
+.text-input{
+    border: none;
+    border-radius: 0%;
+    border-bottom: 2px solid #000000;
+}
+.text-input:focus{
+    border-color: #cccccc;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 .form-container label{
     font-weight: bold;
 }
-li{
-    list-style: none;
-    background-color: pink;
-    padding: 10px;
-    margin: 2%;
-    width: 25%;
+.col-title{
     text-align: center;
+    padding: 5px;
+    font-family: 'Walter Turncoat', cursive;
+    font-size: 1.5em;
+}
+.list-container{
+    margin: 5px;
+    padding: 2%;
+}
+.list-container label{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.6em;
+}
+.change-state{
+    display: block;
+    margin-left: auto;
+}
+.list-group-item{
+    margin: 5px 0;
 }

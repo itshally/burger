@@ -1,0 +1,9 @@
+<li class="list-group-item">
+    <!-- shows the burger name -->
+    <label>{{burger_name}}</label>
+    {{id}}
+    <!-- shows the button to eat the burger -->
+    <button class="change-state" data-id="{{id}}" data-newstate="{{devoured}}">
+        {{#if devoured}}eat me{{else}}yummmm{{/if}}
+    </button>
+</li>

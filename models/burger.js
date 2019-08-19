@@ -1,22 +1,22 @@
 //importing the orm.js file to this current file
 var orm = require('../config/orm');
 
-
-// orm.selectAll('burger_name');
-
-// orm.insertOne('burger_name')
-
 var burger = {
     selectAll: (showBurgers) => {
-        orm.selectAll("burgers", function(result){
+        orm.selectAll("burgers", (result) => {
             showBurgers(result);
         });
     },
     insertOne: (fieldName, newBurger, showBurgers) => {
-        orm.insertOne("burgers", fieldName, newBurger, function(result){
+        orm.insertOne("burgers", fieldName, newBurger, (result) => {
             showBurgers(result);
         });
-    } 
+    },
+    updateOne: (columnValue, condition, showBurgers) => {
+        orm.updateOne("burgers", columnValue, condition, (result) => {
+            showBurgers(result);
+        });
+    }
 }
 
 // exporting the data

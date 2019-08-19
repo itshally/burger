@@ -29,5 +29,5 @@ connection.connect(function(err) {
 });
 
 
-  //exporting the connection from this file
-  module.exports = connection;
+//exporting the connection from this file
+module.exports = connection;

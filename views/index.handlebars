@@ -1,36 +1,47 @@
 <h1>Burgers</h1>
 
-<div class="row">
-  
-  <!-- by default, list of burgers -->
-  <div class="col-6">
-    <ul>
-      {{#each burgers}}
-        <li>
-          {{id}} {{burger_name}}</li>
-      {{/each}}
-    </ul>
-  </div>
-
-  <div class="col-6">
-    <!-- if clicked... -->
-    <ul>
-
-    </ul>
-  </div>
-</div>
-
-
 
 <!-- form -->
-
 <div class="container form-container">
   <form class="create-burger-form" method="POST" action="/api/burgers">
     <div class="form-group">
       <label>Add a Burger</label>
-      <input type="text" class="form-control" id="burger" name="burger" placeholder="Enter your burger name">
+      <input type="text" class="form-control" name="burger" placeholder="Enter your burger name">
     </div>
-
+    
     <button type="submit" id="add-btn" class="btn btn-primary">Add</button>
   </form>
+</div>
+
+
+<div class="container">
+  
+<div class="row">
+    <div class="col">
+      <!-- new added burgers-->
+      <h2>eat me</h2>
+      <ul class="list-group">
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burgers/burgers-block devoured=true}} 
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+
+    <!-- burgers that are already eaten -->
+    <div class="col">
+      <!-- burgers haven't eaten -->
+      <ul class="list-group">
+        <h2>done</h2>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burgers/burgers-block devoured=false}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+
+    
+  </div>
 </div>

@@ -1,6 +1,6 @@
 h1{
     text-align: center;
-    padding: 2%;
+    padding: 5%;
     font-family: 'Syncopate', sans-serif;
 }
 .form-container{
@@ -30,16 +30,11 @@ h1{
 .col-title{
     text-align: center;
     padding: 5px;
-    font-family: 'Walter Turncoat', cursive;
     font-size: 1.5em;
 }
 .list-container{
     margin: 5px;
     padding: 2%;
-}
-.list-container label{
-    font-family: 'Nanum Pen Script', cursive;
-    font-size: 1.6em;
 }
 .change-state{
     display: block;
